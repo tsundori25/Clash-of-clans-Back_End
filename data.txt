@@ -1,0 +1,34 @@
+
+- Di schema atau model marketcreated & lastcollect
+    goldcollected: untuk menampung gold hasil perhitungan
+    marketcreated : date.now 
+    lastcollect : date.now (hit end point collect)
+
+get marketid -> marketcreated
+buat const dengan nilai date.now
+
+kondisi jika lastcollect undefined
+proses -> data seekarang - data pembuatan market / 60000
+simpan proses ke goldcollected di market
+Jika lastcollect tidak undefined
+else
+proses -> time sekarang - lastcollect/ 60000
+simpan lastcollect
+
+
+/collect
+get userid
+ -> findbyid(untuk memasukkan goldnya)
+get marketid -> marketcreated
+buat const dengan nilai date.now
+
+kondisi jika lastcollect undefined
+proses -> data seekarang - data pembuatan market / 60000
+update resource ke user.resource.gold
+update resource ke market.lastcollect
+simpan proses ke goldcollected di market
+
+Jika lastcollect tidak undefined
+else
+proses -> time sekarang - lastcollect / 60000
+simpan lastcollect
